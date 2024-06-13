@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/fe4bc25de3.js" crossorigin="anonymous"></script>
+    <title> Home </title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    
+</head> 
+<body>
+    <header>
+        
+        <input type="checkbox" name="" id="toggler">
+        <label for="toggler" class="fas fa-bars"></label>
+        
+        <a class="logo">Sweet Blisss<span> </span></a>
+
+        <nav class="navbar">
+            <div>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="about">About</a></li>
+                    <li><a href="cakes">Our Cakes</a></li>
+                    <li><a href="review">Reviews</a></li>
+                    <li><a href="contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        {% if not request.user.is_authenticated %}
+        <div class="icons">
+            <a class="fas fa-search"></a>
+            <a class="fas fa-shopping-cart" id="cart-icon"></a>
+            <a href="/signup" class="fas fa-user"></a>
+        </div>
+        {% else %}
+        <div class="icons">
+            <a class="fas fa-search"></a>
+            <a class="fas fa-shopping-cart" id="cart-icon"></a>
+            <a href="/login" class="fas fa-user">Logout</a>
+            <!-- cart -->
+            <div class="cart">
+                <h2 class="cart-title">Your Cart</h2>
+                <!-- content -->
+                 <div class="cart-content">
+                    
+                    
+                 </div>
+                 <!-- total -->
+                <div class="total">
+                    <div class="total-title">Total</div>
+                    <div class="total-price">Rs.0</div>
+                </div>
+                <!-- Buy button -->
+                <button type="button" class="btn-buy">Order Now</button>
+                <!-- cart close -->
+                <i class="fas fa-times-circle" id="close-cart"></i>
+
+            </div>
+        </div>
+        {% endif %}
+    </header>
+
+    <section class="home" id="home">
+        <div class="content">
+            <h3>Delicious Cakes</h3>
+            <span>Fresh and Tasty</span>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, quas sunt quo saepe ducimus similique, dicta modi</p>
+            <a href="/cakes" class="btn">Order now</a>
+        </div>
+    </section>
+
+
+
+
+    <section class="about" id="about">
+        <h1 class="heading"> <span> about </span> us </h1>
+        <div class="row">
+            <div class="video-container">
+                <video src="static/images/vid.mp4" loop autoplay muted></video>
+                <h3>best cake sellers</h3>
+            </div>
+            <div class="content">
+                <h3>why choose us?</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Ut ratione quisquam libero blanditiis architecto, autem 
+                nihil voluptas animi doloribus assumenda ducimus sed 
+                incidunt ad totam qui. Iusto veniam labore est!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing 
+                elit. Magnam, in numquam debitis ad provident optio sit
+                maiores iusto error est quo culpa soluta cumque, illum
+                dignissimos ipsam dolorum aspernatur modi.</p>
+                <a href="/about" class="btn">learn more</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="icons-container">
+        <div class="icons">
+            <img src="static/images/icon1.jpg" alt="">
+            <div class="info">
+                <h3>free delivery</h3>
+                <span>on all orders</span>
+            </div>
+        </div>
+    
+    <div class="icons">
+        <img src="static/images/icon2.jpg" alt="">
+        <div class="info">
+            <h3>fresh cakes</h3>
+            <span>made to order</span>
+        </div>
+    </div>
+    <div class="icons">
+        <img src="static/images/icon3.jpg" alt="">
+        <div class="info">
+            <h3>special offers</h3>
+            <span>on all orders</span>
+        </div>
+    </div>
+    <div class="icons">
+        <img src="static/images/icon4.jpg" alt="">
+        <div class="info">
+            <h3>secure payments</h3>
+            <span>protected by paypal</span>
+        </div>
+    </div>
+    </section>
+
+
+
+
+    <section class="product" id="product">
+        <h1 class="heading">our <span>cakes</span></h1>
+        <div class="product-container">
+            <a href="/choc" class="product-box">
+                <img src="static/images/choc.jpg" alt="product"> 
+                <span>chocolate cakes</span>
+            </a>
+    
+            <a href="/vanila" class="product-box">
+                <img src="static/images/vanila.jpg" alt="product">
+                <span>vanila cakes</span>
+            </a>
+
+            <a href="/redvel" class="product-box">
+                <img src="static/images/red3.png" alt="product">
+                <span>redvelvet cakes</span>
+            </a>
+
+            <a href="/bday" class="product-box">
+                <img src="static/images/bday.png" alt="product">
+                <span>birthday cakes</span>
+            </a>
+
+            <a href="/wedd" class="product-box">
+                <img src="static/images/wed.jpg" alt="product">
+                <span>wedding cakes</span>
+            </a>
+            
+            <a href="/mtier" class="product-box">
+                <img src="static/images/tier.jpg" alt="product">
+                <span>multitier cakes</span>
+            </a>
+        </div>
+
+        
+    </section>
+
+
+
+
+    <section class="review" id="review">
+        <h1 class="heading">customer's <span>reviews</span></h1>
+        <div class="box-container">
+            <div class="box">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Laborum magni doloremque consectetur quaerat aut qui ratione, 
+                expedita, illum, consequatur vitae error fuga dolor odit 
+                laudantium sunt maxime eum recusandae eius!</p>
+                <div class="user">
+                    <img src="static/images/m1.jpg" alt="">
+                    <div class="user-info">
+                        <h3>adhrit</h3>
+                        <span>happy customer</span>
+                    </div>
+                </div>
+                <span class="fas fa-quote-right"></span>
+            </div>
+    
+    
+            <div class="box">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Laborum magni doloremque consectetur quaerat aut qui ratione, 
+                expedita, illum, consequatur vitae error fuga dolor odit 
+                laudantium sunt maxime eum recusandae eius!</p>
+                        
+                <div class="user">
+                    
+                    <img src="static/images/w1.jpg" alt="">
+                    <div class="user-info"> 
+                        <h3>Shruti</h3>
+                        <span>happy customer</span>
+                    </div>
+                </div>        
+                <span class="fas fa-quote-right"></span>
+            </div>
+    
+    
+            <div class="box">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Laborum magni doloremque consectetur quaerat aut qui ratione, 
+                expedita, illum, consequatur vitae error fuga dolor odit 
+                laudantium sunt maxime eum recusandae eius!</p>
+                <div class="user">
+                    <img src="static/images/m2.jpg" alt="">
+                    <div class="user-info">
+                        <h3>priyanshu</h3>
+                        <span>happy customer</span>
+                    </div>
+                </div>
+                <span class="fas fa-quote-right"></span>
+            </div>
+    
+            <div class="box">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Laborum magni doloremque consectetur quaerat aut qui ratione, 
+                expedita, illum, consequatur vitae error fuga dolor odit 
+                laudantium sunt maxime eum recusandae eius!</p>
+                <div class="user">
+                    <img src="static/images/w2.jpg" alt="">
+                    <div class="user-info">
+                        <h3>Anuradha</h3>
+                        <span>happy customer</span>
+                    </div>
+                </div>
+                <span class="fas fa-quote-right"></span>
+            </div>
+            <div class="box">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Laborum magni doloremque consectetur quaerat aut qui ratione, 
+                expedita, illum, consequatur vitae error fuga dolor odit 
+                laudantium sunt maxime eum recusandae eius!</p>
+                <div class="user">
+                    <img src="static/images/m2.jpg" alt="">
+                    <div class="user-info">
+                        <h3>Shubham</h3>
+                        <span>happy customer</span>
+                    </div>
+                </div>
+                <span class="fas fa-quote-right"></span>
+            </div>
+            <div class="box">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Laborum magni doloremque consectetur quaerat aut qui ratione, 
+                expedita, illum, consequatur vitae error fuga dolor odit 
+                laudantium sunt maxime eum recusandae eius!</p>
+                <div class="user">
+                    <img src="static/images/m1.jpg" alt="">
+                    <div class="user-info">
+                        <h3>atharva</h3>
+                        <span>happy customer</span>
+                    </div>
+                </div>
+                <span class="fas fa-quote-right"></span>
+            </div>
+        </div>
+        </section>
+
+
+
+        <section class="contact" id="contact">
+            <h1 class="heading"> <span> contact </span> us </h1>
+            <div id="row">
+               <form action="/contact" method="POST">
+                {% csrf_token %}
+        
+                Name<input type="text" placeholder=" your name" name="name" class="box">
+                Email<input type="email" placeholder="your email" name="email" class="box">
+                Phone no.<input type="number" placeholder=" your number" name="phone" class="box">
+                Message<textarea name="message" class="box" placeholder="type your message..." cols="25" rows="8"></textarea>
+                <button type="submit" value="send message" class="btn">Send</button>
+               </form>
+            </div>
+        </section>
+
+
+
+        <section class="footer">
+            <div class="box-container">
+                <div class="box">
+                    <h3>quick links</h3>
+                    <a href="/">home</a>
+                    <a href="about">about</a>
+                    <a href="/cakes">our cakes</a>
+                    <a href="/review">review</a>
+                    <a href="/contact">contact</a>
+                </div>
+
+                <div class="box">
+                    <h3>locations</h3>
+                    <a href="/">india</a>
+                    <a href="/">USA</a>    
+                </div>
+
+                <div class="box">
+                    <h3>contact info</h3>
+                    <a href="/">+123-456-7890</a>
+                    <a href="/">sweet@gmail.com</a>
+                    <a href="/">mumbai, india-400104</a>
+                </div>
+            </div>
+            
+            <div class="credit">created by <span>shruti yadav</span> | all rights reserved </div>
+
+        </section>
+
+
+        <script src="static/main.js"></script>
+
+
+
+</body>
+</html>

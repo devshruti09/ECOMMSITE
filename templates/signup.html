@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/fe4bc25de3.js" crossorigin="anonymous"></script>
+    <title> SignUp </title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    
+</head> 
+<body>
+    <header>
+        <input type="checkbox" name="" id="toggler">
+        <label for="toggler" class="fas fa-bars"></label>
+        
+        <a href="/" class="logo">Sweet Bliss<span> </span></a>
+
+        <nav class="navbar">
+            <div>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="about">About</a></li>
+                    <li><a href="cakes">Our Cakes</a></li>
+                    <li><a href="review">Reviews</a></li>
+                    <li><a href="contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="icons">
+            <a class="fas fa-search"></a>
+            <a class="fas fa-shopping-cart" id="cart-icon"></a>
+            <a class="fas fa-user"></a>
+        </div>
+    </header>
+
+
+    <section class="signup" id="signup">
+        <h1 class="heading"> <span> sign </span> up </h1>
+        <div class="row">
+            <form action="/signup" method="POST">
+                {% csrf_token %}
+                User name
+                <input type="text" name="uname" class="box" id="username">
+                Email
+                <input type="email" name="email" class="box" id="email">
+                Password
+                <input type="password" name="pass1" class="box" id="password">
+                Confirm Password
+                <input type="password" name="pass2" class="box" id="password1">
+                <button type="submit" class="btn" onclick="func()">SignUp</button>
+                <a href="/login">Already a User?</a>
+            </form>
+        </div>
+    </section>
+    <script>
+        function func(){
+            var username=document.getElementById("username").value;
+            var email=document.getElementById("email").value;
+            var pass=document.getElementById("password").value;
+            if(username==username && email==email && password==password){
+                window.location.assign("login.html")
+            }
+        }
+        
+    </script>
+</body>
+</html>    
