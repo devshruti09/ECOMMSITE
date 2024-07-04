@@ -86,7 +86,7 @@ def handlelogin(request):
             login(request,myuser)
             return redirect("/")
         else:
-            return redirect("/login")
+            return redirect("/")
     return render(request,"login.html")
 
 def handlelogout(request):
